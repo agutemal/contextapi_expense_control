@@ -2,6 +2,7 @@ import BudgetForm from "./components/BudgetForm"
 import { useBudget } from "./hooks/useBudget"
 import { useMemo } from "react"
 import BudgetTraker from "./components/budgetTrckert"
+import ExpenseModal from "./components/expenseModal"
 function App() {
   const {state,dispatch} =  useBudget()
   const isValidBudget=useMemo(()=>state.budget>0,[state.budget])
@@ -15,6 +16,10 @@ function App() {
       <p>Formulario</p>
       {isValidBudget? <BudgetTraker/>:<BudgetForm/>}
     </div>
+    {isValidBudget&& (
+      <ExpenseModal/>
+    )}
+      
     </>
   )
 }
