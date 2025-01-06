@@ -1,7 +1,7 @@
 export type Expense={
     id:string
     expenseName:string
-    emount:number
+    amount:number
     category:string
     date:Value
 }
